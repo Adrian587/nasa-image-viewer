@@ -8,27 +8,26 @@ import Typography from '@mui/material/Typography';
 function Images(props) {
     return (
         props.images.map((item, index) => (
-            <div key={index}>
-                <Card sx={{ minWidth: 275, marginBottom: 1, marginTop: 2, maxWidth: 600 }}>
-                    <CardContent>
-                        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            {item.title} - {item.date}
-                        </Typography>
-                        <img src={item.url} className='card-image' alt={item.title} />
-                        <Typography variant="h5" component="div">
-                            Copyright: {item.copyright ? item.copyright : 'N/A'}
-                        </Typography>
-                        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                            {item.explanation}
-                        </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Button size="small" color="primary" onClick={() => props.handleLike(item)}>
-                            {!props.likedImages.some(likedItem => likedItem.date === item.date) ? 'Like' : 'Unlike'}
-                        </Button>
-                    </CardActions>
-                </Card>
-            </div>
+
+            <Card key={index} sx={{ minWidth: 275, marginBottom: 1, marginTop: 2, maxWidth: 600 }}>
+                <CardContent>
+                    <Typography variant="caption" sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                        {item.title} - {item.date}
+                    </Typography>
+                    <img src={item.url} className='card-image' alt={item.title} />
+                    <Typography variant="h5" component="div">
+                        Copyright: {item.copyright ? item.copyright : 'N/A'}
+                    </Typography>
+                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                        {item.explanation}
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                    <Button size="small" color="primary" onClick={() => props.handleLike(item)}>
+                        {!props.likedImages.some(likedItem => likedItem.date === item.date) ? 'Like' : 'Unlike'}
+                    </Button>
+                </CardActions>
+            </Card>
         ))
     )
 }

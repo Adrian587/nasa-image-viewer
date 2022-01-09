@@ -50,3 +50,7 @@
     transform: rotate(360deg);
   }
 }
+
+button:focus {
+  box-shadow: 0px 0px 15px #fff;
+}
