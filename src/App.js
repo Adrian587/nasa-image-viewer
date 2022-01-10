@@ -37,7 +37,6 @@ function App() {
 
   const handleLike = (item) => {
     updateLikedImages(item);
-
   }
   const updateLikedImages = (item) => {
     if (!likedImages.includes(item)) {
