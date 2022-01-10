@@ -24,8 +24,14 @@ function Images(props) {
                     <Typography variant="h5" component="div">
                         Copyright: {item.copyright ? item.copyright : 'N/A'}
                     </Typography>
+
                     <Typography sx={{ mb: 1.5 }} color="text.secondary">
                         {item.explanation}
+                        {item.url.includes('youtube') ?
+                            <div>
+                                Video Link: <a href={item.url} target="_blank" rel="noopener noreferrer">{item.url}</a>
+                            </div>
+                            : null}
                     </Typography>
                 </CardContent>
                 <CardActions>
