@@ -23,7 +23,7 @@ function App() {
   }, [likedImages])
 
   const fetchPlanetImages = async () => {
-    let res = await axios.get('https://api.nasa.gov/planetary/apod', { params: { api_key: apiKey, start_date: '2022-01-01' } });
+    let res = await axios.get('https://api.nasa.gov/planetary/apod', { params: { api_key: apiKey, start_date: '2022-01-01', end_date: '2022-01-10' } });
     const imgData = res.data.map(item => ({
       date: item.date,
       title: item.title,
